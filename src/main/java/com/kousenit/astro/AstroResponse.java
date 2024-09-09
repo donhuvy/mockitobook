@@ -8,9 +8,7 @@ public class AstroResponse {
     private final String message;
     private final List<Assignment> people;
 
-    public AstroResponse(int number,
-                         String message,
-                         List<Assignment> people) {
+    public AstroResponse(int number, String message, List<Assignment> people) {
         this.number = number;
         this.message = message;
         this.people = people;

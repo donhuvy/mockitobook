@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class BioService {
+
     private final List<String> pageNames;
 
     public BioService(String... pageNames) {

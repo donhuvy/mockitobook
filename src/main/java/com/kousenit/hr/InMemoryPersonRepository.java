@@ -1,9 +1,13 @@
 package com.kousenit.hr;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class InMemoryPersonRepository implements PersonRepository {
+
     private final List<Person> people = new ArrayList<>();
 
     @Override
@@ -16,7 +20,7 @@ public class InMemoryPersonRepository implements PersonRepository {
 
     @Override
     public Optional<Person> findById(int id) {
-        Map<Integer,Person> peopleMap =
+        Map<Integer, Person> peopleMap =
                 people.stream().collect(Collectors.toMap(Person::getId, p -> p));
         return Optional.ofNullable(peopleMap.get(id));
     }

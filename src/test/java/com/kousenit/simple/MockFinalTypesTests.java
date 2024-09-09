@@ -11,6 +11,7 @@ import static org.mockito.Mockito.*;
 
 @SuppressWarnings("CommentedOutCode")
 public class MockFinalTypesTests {
+
     @Test
     public void mockFinalClassLocalDate() {
         LocalDate mockDate = mock(LocalDate.class);

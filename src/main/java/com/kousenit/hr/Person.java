@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class Person {
+
     private final Integer id;
     private final String first;
     private final String last;
@@ -38,9 +39,9 @@ public class Person {
         if (obj == null || obj.getClass() != this.getClass()) return false;
         Person that = (Person) obj;
         return Objects.equals(this.id, that.id) &&
-               Objects.equals(this.first, that.first) &&
-               Objects.equals(this.last, that.last) &&
-               Objects.equals(this.dob, that.dob);
+                Objects.equals(this.first, that.first) &&
+                Objects.equals(this.last, that.last) &&
+                Objects.equals(this.dob, that.dob);
     }
 
     @Override
@@ -51,9 +52,10 @@ public class Person {
     @Override
     public String toString() {
         return "Person[" +
-               "id=" + id + ", " +
-               "first=" + first + ", " +
-               "last=" + last + ", " +
-               "dob=" + dob + ']';
+                "id=" + id + ", " +
+                "first=" + first + ", " +
+                "last=" + last + ", " +
+                "dob=" + dob + ']';
     }
+
 }

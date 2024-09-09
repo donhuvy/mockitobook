@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class WikiUtil {
+
     public static String getWikipediaExtract(String title) {
         String base = "https://en.wikipedia.org/w/api.php";
         Map<String, String> params = Map.ofEntries(

@@ -1,6 +1,7 @@
 package com.kousenit.astro;
 
 public class Assignment {
+
     private final String name;
     private final String craft;
 

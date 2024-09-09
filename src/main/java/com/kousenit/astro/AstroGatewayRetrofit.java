@@ -9,6 +9,7 @@ import java.io.IOException;
 
 @SuppressWarnings("HttpUrlsUsage")
 public class AstroGatewayRetrofit implements Gateway<AstroResponse> {
+
     private static final String DEFAULT_URL = "http://api.open-notify.org/";
     private final String url;
 

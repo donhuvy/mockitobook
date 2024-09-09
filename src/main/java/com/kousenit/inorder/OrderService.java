@@ -1,6 +1,7 @@
 package com.kousenit.inorder;
 
 public class OrderService {
+
     // Dependencies of the class under test
     private final PaymentService paymentService;
     private final ShippingService shippingService;

@@ -2,6 +2,7 @@ package com.kousenit.wikipedia;
 
 @SuppressWarnings("unused")
 public class WikiResponse {
+
     private String batchcomplete;
     private WikiQuery query;
 

@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class LoggingStandardErrorTests {
+
     @Test
     void testLogWithStnErr() {
         Logger logger = Logger.getLogger(LoggingDemoTests.class.getName());

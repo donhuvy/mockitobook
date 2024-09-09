@@ -20,39 +20,14 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.AdditionalAnswers.returnsFirstArg;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
-import static org.mockito.Mockito.any;
-import static org.mockito.Mockito.anyInt;
-import static org.mockito.Mockito.argThat;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.intThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.timeout;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class PersonServiceTest {
-
-    @Mock
-    private PersonRepository repository;
-
-    @InjectMocks
-    private PersonService service;
-
-    @Captor
-    private ArgumentCaptor<Person> personArg;
 
     private final List<Person> people = List.of(
             new Person(1, "Grace", "Hopper", LocalDate.of(1906, Month.DECEMBER, 9)),
@@ -60,9 +35,14 @@ public class PersonServiceTest {
             new Person(3, "Adele", "Goldberg", LocalDate.of(1945, Month.JULY, 7)),
             new Person(14, "Anita", "Borg", LocalDate.of(1949, Month.JANUARY, 17)),
             new Person(5, "Barbara", "Liskov", LocalDate.of(1939, Month.NOVEMBER, 7)));
-
     private final Map<Integer, Person> peopleMap = people.stream()
             .collect(Collectors.toMap(Person::getId, p -> p));
+    @Mock
+    private PersonRepository repository;
+    @InjectMocks
+    private PersonService service;
+    @Captor
+    private ArgumentCaptor<Person> personArg;
 
     // Can't be done because JUnit 5 extension is _strict_ and
     // many of these tests don't call repository.findAll()

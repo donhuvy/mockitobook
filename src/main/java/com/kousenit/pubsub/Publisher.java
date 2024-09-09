@@ -3,15 +3,16 @@ package com.kousenit.pubsub;
 import java.util.ArrayList;
 import java.util.List;
 
-// Adapted from a similar example in the Spock framework
+// Adapted from a similar example in the Spock framework.
 public class Publisher {
+
     private final List<Subscriber> subscribers = new ArrayList<>();
 
     public void subscribe(Subscriber sub) {
         subscribers.add(sub);
     }
 
-    // Want to test this method
+    // Want to test this method.
     public void send(String message) {
         for (Subscriber sub : subscribers) {
             try {

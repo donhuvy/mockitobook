@@ -4,12 +4,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @SuppressWarnings("unused")
 public class WikiPage {
+
     @JsonIgnore
     private int pageid;
+
     @JsonIgnore
     private int ns;
+
     private String title;
     private String extract;
+
     @JsonIgnore
     private boolean missing;
 

@@ -14,7 +14,9 @@ import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.times;
 
 class BioServiceTest {
-    @Test // Integration test
+
+    @Test
+        // Integration test
     void checkBios() {
         BioService service = new BioService("Anita Borg", "Ada Lovelace",
                 "Grace Hopper", "Barbara Liskov");

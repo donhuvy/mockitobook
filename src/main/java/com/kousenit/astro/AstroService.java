@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class AstroService {
+
     private final Gateway<AstroResponse> gateway;
 
     public AstroService(Gateway<AstroResponse> gateway) {

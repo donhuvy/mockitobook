@@ -8,6 +8,7 @@ import java.util.ListIterator;
 // Our own mocked list, to return a list containing the values 1, 2, 3
 // Only two methods are implemented: size, get(i)
 public class MockListOfInteger implements List<Integer> {
+
     @Override
     public int size() {
         return 3;

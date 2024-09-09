@@ -53,7 +53,8 @@ class PublisherTest {
         inorder.verify(sub2).onNext("Hello");
     }
 
-    @Test @DisplayName("Test send in parallel")
+    @Test
+    @DisplayName("Test send in parallel")
     @Disabled("This test fails because the order of the calls is not guaranteed")
     void testSendParallelCausesProblemsWithOrder() {
         pub.sendParallel("Hello");

@@ -8,6 +8,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 public class PersonService {
+
     private final PersonRepository repository;
 
     public PersonService(PersonRepository repository) {
@@ -70,5 +71,4 @@ public class PersonService {
         repository.findAll()
                 .forEach(repository::delete);
     }
-
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 @SuppressWarnings("unused")
 public class WikiQuery {
+
     private List<WikiPage> pages;
 
     public List<WikiPage> getPages() {

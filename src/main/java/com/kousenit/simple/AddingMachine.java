@@ -3,6 +3,7 @@ package com.kousenit.simple;
 import java.util.List;
 
 public class AddingMachine {
+
     private final List<Integer> numbers;
 
     public AddingMachine(List<Integer> numbers) {

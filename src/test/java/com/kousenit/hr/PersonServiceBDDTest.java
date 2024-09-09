@@ -15,19 +15,10 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.BDDMockito.any;
-import static org.mockito.BDDMockito.given;
-import static org.mockito.BDDMockito.then;
-import static org.mockito.BDDMockito.times;
+import static org.mockito.BDDMockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class PersonServiceBDDTest {
-    @Mock
-    private PersonRepository repository;
-
-    @InjectMocks
-    private PersonService service;
-
     private final List<Person> people = Arrays.asList(
             new Person(1, "Grace", "Hopper",
                     LocalDate.of(1906, Month.DECEMBER, 9)),
@@ -39,6 +30,10 @@ public class PersonServiceBDDTest {
                     LocalDate.of(1949, Month.JANUARY, 17)),
             new Person(5, "Barbara", "Liskov",
                     LocalDate.of(1939, Month.NOVEMBER, 7)));
+    @Mock
+    private PersonRepository repository;
+    @InjectMocks
+    private PersonService service;
 
     @Test
     public void findMaxId() {
@@ -63,10 +58,10 @@ public class PersonServiceBDDTest {
     public void saveAllPeople() {
         given(repository.save(any(Person.class)))
                 .willReturn(people.get(0),
-                            people.get(1),
-                            people.get(2),
-                            people.get(3),
-                            people.get(4));
+                        people.get(1),
+                        people.get(2),
+                        people.get(3),
+                        people.get(4));
 
         List<Integer> ids = service.savePeople(
                 people.toArray(Person[]::new));
